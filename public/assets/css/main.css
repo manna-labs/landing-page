@@ -1013,15 +1013,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #1fcaa7;
-		}
-
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		input[type="button"]:active,
-		button:active,
-		.button:active {
-			background-color: #199e83;
+			background-color: #e15626ff;
 		}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -1050,8 +1042,8 @@ input, select, textarea {
 
 /* Header */
 
-	#header h1 {
-		font-size: 3.25em;
+	#header img {
+		width: 10em;
 		margin: 0 0 0.55em 0;
 	}
 
