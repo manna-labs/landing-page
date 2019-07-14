@@ -1013,7 +1013,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #e15626ff;
+			background-color: #FF7E51;
 		}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
