@@ -9,6 +9,7 @@
 	"use strict";
 
 	var	$body = document.querySelector('body');
+	var db = firebase.firestore();
 
 	// Methods/polyfills.
 
@@ -147,11 +148,13 @@
 					// Disable submit.
 						$submit.disabled = true;
 
-					// Process form.
-					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
-					// but there's enough here to piece together a working AJAX submission call that does.
-						window.setTimeout(function() {
+					// Submit email data to the server
+						const email = $form.querySelector("input").value;
 
+						db.collection("signup").add({
+							email: email
+						})
+						.then(docRef => {
 							// Reset form.
 								$form.reset();
 
@@ -159,10 +162,12 @@
 								$submit.disabled = false;
 
 							// Show message.
-								$message._show('success', 'Thank you!');
-								//$message._show('failure', 'Something went wrong. Please try again.');
-
-						}, 750);
+								$message._show('success', 'Thank you!');						    
+						})
+						.catch(error => {
+							$message._show('failure', 'Something went wrong. Please try again.');
+							console.error("Error adding document: ", error);
+						});
 
 				});
 
